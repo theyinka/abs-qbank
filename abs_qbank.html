@@ -13,71 +13,48 @@
 @media(prefers-color-scheme:dark){:root{--bg:#0f1117;--card:#1c1f26;--border:#2e3240;--text:#f0f1f3;--muted:#8b92a0;--blue-light:#0d2a47;--blue-dark:#85B7EB;--green-light:#0d2010;--red-light:#2a0d0d;--amber-light:#2a1a05;--purple-light:#1a1640}}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overflow:hidden;font-family:var(--font);background:var(--bg);color:var(--text)}
-#root{height:100%;display:flex;flex-direction:column;max-width:600px;margin:0 auto;position:relative}
-/* Header */
+#root{height:100%;display:flex;flex-direction:column;max-width:600px;margin:0 auto}
 .header{background:var(--blue);color:#fff;padding:env(safe-area-inset-top,0) 0 0;flex-shrink:0}
 .header-inner{padding:12px 16px 0;display:flex;align-items:center;justify-content:space-between}
-.header h1{font-size:17px;font-weight:600;letter-spacing:-.3px}
-.header-sub{font-size:11px;opacity:.75;margin-top:1px}
-/* Tab bar */
 .tab-bar{display:flex;background:var(--blue);border-bottom:1px solid rgba(255,255,255,.15)}
-.tab{flex:1;padding:10px 4px;text-align:center;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s}
+.tab{flex:1;padding:10px 4px;text-align:center;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent}
 .tab.active{color:#fff;border-bottom-color:#fff}
-/* Scroll content */
 .content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0))}
-/* Cards */
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
-/* Metric grid */
 .mgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
 .mcard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
 .mlabel{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
 .mvalue{font-size:24px;font-weight:600;color:var(--text)}
 .msub{font-size:10px;color:var(--muted);margin-top:2px}
-/* Badges */
 .badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:600}
-.bc{background:var(--green-light);color:var(--green)}
-.bi{background:var(--red-light);color:var(--red)}
-.bd{background:var(--blue-light);color:var(--blue-dark)}
-.bde{background:var(--green-light);color:var(--green)}
-.bdm{background:var(--amber-light);color:var(--amber)}
-.bdh{background:var(--red-light);color:var(--red)}
-.bv{background:var(--purple-light);color:var(--purple)}
-.bf{background:var(--amber-light);color:var(--amber)}
-/* Form elements */
+.bc{background:var(--green-light);color:var(--green)}.bi{background:var(--red-light);color:var(--red)}
+.bd{background:var(--blue-light);color:var(--blue-dark)}.bde{background:var(--green-light);color:var(--green)}
+.bdm{background:var(--amber-light);color:var(--amber)}.bdh{background:var(--red-light);color:var(--red)}
+.bv{background:var(--purple-light);color:var(--purple)}.bf{background:var(--amber-light);color:var(--amber)}
 .field-label{font-size:12px;color:var(--muted);margin-bottom:5px}
 select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:var(--font);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-/* Buttons */
 .btn{display:block;width:100%;padding:14px;border-radius:12px;font-size:16px;font-weight:600;cursor:pointer;border:none;font-family:var(--font);transition:opacity .15s;text-align:center}
-.btn:active{opacity:.75}
+.btn:active{opacity:.75}.btn:disabled{opacity:.4;cursor:not-allowed}
 .btn-primary{background:var(--blue);color:#fff}
 .btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--border);margin-top:8px}
 .btn-outline-blue{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue);margin-top:8px}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-/* Mode buttons */
 .mode-row{display:flex;gap:8px;margin-bottom:14px}
-.mode-btn{flex:1;padding:9px 6px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);transition:all .15s;text-align:center}
+.mode-btn{flex:1;padding:9px 6px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);text-align:center}
 .mode-btn.active{background:var(--blue-light);border-color:var(--blue);color:var(--blue)}
-/* Score banner */
 .score-banner{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
 .score-num{font-weight:600;color:var(--text)}
-/* Vitals tables */
 .vtable{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:12px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
 .vtable td{padding:6px 8px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.vtable td:last-child{border-right:none}
-.vtable tr:last-child td{border-bottom:none}
+.vtable td:last-child{border-right:none}.vtable tr:last-child td{border-bottom:none}
 .vtable tr:first-child td{background:var(--bg);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-/* Stem */
 .stem{font-size:15px;line-height:1.75;color:var(--text);margin-bottom:14px}
 .qtext{font-size:16px;font-weight:600;color:var(--text);margin-bottom:14px;line-height:1.5}
-/* Choice buttons */
 .cbtn{display:flex;align-items:flex-start;gap:10px;width:100%;text-align:left;padding:12px 14px;margin-bottom:8px;border-radius:12px;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:15px;line-height:1.5;color:var(--text);font-family:var(--font);transition:all .1s}
-.cbtn:active:not(:disabled){transform:scale(.98)}
-.cbtn:disabled{cursor:default}
+.cbtn:active:not(:disabled){transform:scale(.98)}.cbtn:disabled{cursor:default}
 .cbtn.sel-c{background:var(--green-light);border-color:var(--green);color:var(--green)}
 .cbtn.sel-w{background:var(--red-light);border-color:var(--red);color:var(--red)}
 .cbtn.rev-c{background:var(--green-light);border-color:var(--green);color:var(--green)}
 .cltr{font-weight:700;min-width:22px;font-size:15px}
-/* Critique */
 .critique-wrap{margin-top:14px;border-top:1px solid var(--border);padding-top:14px}
 .critique-intro{font-size:14px;line-height:1.75;color:var(--text);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
 .critique-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
@@ -89,16 +66,13 @@ select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px
 .refs{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
 .ref-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
 .ref-item{font-size:11px;color:var(--blue-dark);margin-bottom:4px;line-height:1.5;font-style:italic}
-/* Pearl */
 .pearl{background:var(--amber-light);border-radius:12px;padding:12px 14px;margin-top:12px}
 .pearl-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--amber);margin-bottom:4px}
 .pearl-text{font-size:14px;color:#633806;line-height:1.6}
 @media(prefers-color-scheme:dark){.pearl-text{color:#FAC775}}
-/* Controversy */
 .controversy-note{background:var(--purple-light);border-radius:12px;padding:12px 14px;margin-bottom:12px}
 .cv-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--purple);margin-bottom:4px}
 .cv-text{font-size:14px;color:var(--purple);line-height:1.6}
-/* Diff rate bar */
 .rate-row{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap}
 .rate-label{font-size:12px;color:var(--muted)}
 .rbtn{padding:7px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);font-size:13px;cursor:pointer;font-family:var(--font);color:var(--text)}
@@ -107,41 +81,45 @@ select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px
 .rbtn.rh{background:var(--red-light);border-color:var(--red);color:var(--red)}
 .bmark-btn{padding:7px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);font-size:13px;cursor:pointer;font-family:var(--font);color:var(--muted);margin-left:auto}
 .bmark-btn.flagged{background:var(--amber-light);border-color:var(--amber);color:var(--amber)}
-/* Loading */
 .loading{text-align:center;padding:3rem 1rem}
 .dots{display:inline-flex;gap:5px;margin-bottom:12px}
 .dots span{width:8px;height:8px;background:var(--blue);border-radius:50%;animation:blink 1.2s infinite}
 .dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
 @keyframes blink{0%,80%,100%{opacity:.15}40%{opacity:1}}
 .loading p{font-size:14px;color:var(--muted)}
-/* Domain bars */
 .drow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .dname{font-size:13px;color:var(--text);min-width:170px;flex-shrink:0;line-height:1.3}
 .bwrap{flex:1;height:7px;background:var(--border);border-radius:4px;overflow:hidden}
 .bar{height:100%;border-radius:4px;transition:width .4s ease}
 .dstat{font-size:12px;color:var(--muted);min-width:52px;text-align:right}
-/* Summary */
 .summary-score{font-size:48px;font-weight:700;color:var(--text);margin-bottom:4px}
 .summary-pct{font-size:18px;color:var(--muted);margin-bottom:16px}
-/* Review item */
 .review-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
 .review-date{font-size:11px;color:var(--muted);margin-left:auto}
-/* Empty */
 .empty{text-align:center;padding:4rem 1rem;color:var(--muted);font-size:15px}
-/* Imaging */
 .imaging-box{background:var(--bg);border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:13px;color:var(--text);border:1px solid var(--border)}
 .imaging-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:3px}
-/* Section titles */
 .sec-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.cache-bar-wrap{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:8px}
+.cache-bar{height:100%;background:var(--blue);border-radius:3px;transition:width .3s ease}
+.cache-status{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.cache-label{font-size:11px;color:var(--muted)}
+.cache-count{font-size:11px;font-weight:600;color:var(--blue)}
 </style>
 </head>
 <body>
 <div id="root">
   <div class="header">
     <div class="header-inner">
-      <div><div class="header h1" style="font-size:17px;font-weight:700;color:#fff">ABS QBank</div><div style="font-size:11px;opacity:.7;margin-top:1px">SESAP-Style Board Review</div></div>
-      <div style="display:flex;align-items:center;gap:10px"><div id="header-score" style="font-size:13px;color:rgba(255,255,255,.8);font-weight:500"></div><button onclick="resetApiKey()" style="background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:8px;padding:5px 10px;font-size:11px;cursor:pointer;font-family:var(--font)">API Key</button></div>
+      <div>
+        <div style="font-size:17px;font-weight:700;color:#fff">ABS QBank</div>
+        <div style="font-size:11px;opacity:.7;margin-top:1px">SESAP-Style Board Review</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div id="header-score" style="font-size:13px;color:rgba(255,255,255,.8);font-weight:500"></div>
+        <button onclick="resetApiKey()" style="background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:8px;padding:5px 10px;font-size:11px;cursor:pointer;font-family:var(--font)">API Key</button>
+      </div>
     </div>
     <div class="tab-bar">
       <button class="tab active" onclick="showTab('practice')">Practice</button>
@@ -151,8 +129,6 @@ select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px
   </div>
 
   <div class="content" id="main-content">
-
-    <!-- PRACTICE TAB -->
     <div id="view-practice" class="view-panel">
       <div id="pane-setup">
         <div class="mgrid">
@@ -160,6 +136,17 @@ select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px
           <div class="mcard"><div class="mlabel">Accuracy</div><div class="mvalue" id="s-pct">—</div></div>
           <div class="mcard"><div class="mlabel">Bookmarked</div><div class="mvalue" id="s-flagged">0</div></div>
           <div class="mcard"><div class="mlabel">Due review</div><div class="mvalue" id="s-due">0</div><div class="msub">spaced rep</div></div>
+        </div>
+        <div class="card" id="cache-card">
+          <div class="cache-status">
+            <span class="cache-label" id="cache-label">Question bank</span>
+            <span class="cache-count" id="cache-count">0 / 100 ready</span>
+          </div>
+          <div class="cache-bar-wrap"><div class="cache-bar" id="cache-bar" style="width:0%"></div></div>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button class="btn btn-primary" id="gen-btn" onclick="startGenerating()" style="flex:1;padding:10px;font-size:13px;margin-top:0">Generate 100 questions</button>
+            <button class="btn btn-secondary" id="stop-btn" onclick="stopGenerating()" style="flex:1;padding:10px;font-size:13px;margin-top:0;display:none">Stop</button>
+          </div>
         </div>
         <div class="card">
           <div class="sec-title">Configure session</div>
@@ -190,22 +177,19 @@ select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px
           <button class="btn btn-outline-blue" id="spaced-btn" onclick="startSession(true)">Spaced review</button>
         </div>
       </div>
-
       <div id="pane-session" style="display:none">
         <div class="score-banner">
-          <span id="q-prog">Question 1 of 10</span>
+          <span id="q-prog">Q1 of 10</span>
           <span id="mode-tag" style="font-size:11px;color:var(--purple)"></span>
           <span>Score: <span class="score-num" id="live-score">0/0</span></span>
         </div>
         <div id="q-content"></div>
-        <button class="btn btn-primary" id="next-btn" style="display:none;margin-top:4px" onclick="nextQuestion()">Next question →</button>
+        <button class="btn btn-primary" id="next-btn" style="display:none;margin-top:4px" onclick="nextQuestion()">Next question</button>
         <button class="btn btn-secondary" id="end-btn" style="display:none" onclick="endSession()">End session</button>
       </div>
-
       <div id="pane-summary" style="display:none"></div>
     </div>
 
-    <!-- REVIEW TAB -->
     <div id="view-review" class="view-panel" style="display:none">
       <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
         <select id="f-result" onchange="renderReview()" style="flex:1;min-width:100px">
@@ -218,7 +202,6 @@ select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px
       <div id="review-list"></div>
     </div>
 
-    <!-- STATS TAB -->
     <div id="view-stats" class="view-panel" style="display:none">
       <div class="mgrid">
         <div class="mcard"><div class="mlabel">Total</div><div class="mvalue" id="st-total">0</div></div>
@@ -239,81 +222,75 @@ select{width:100%;font-size:15px;padding:10px 12px;border-radius:10px;border:1px
         <div id="domain-breakdown"></div>
       </div>
     </div>
-
   </div>
 </div>
 
 <script>
 const MODULES=["Abdomen","Alimentary Tract","Breast","Emergency General Surgery","Endocrine","Legal, Ethics, Quality and Safety","Perioperative Care","Surgical Critical Care","Trauma"];
+const STORAGE_KEY='abs_sesap_v3';
+const API_KEY_STORAGE='abs_anthropic_key';
+const CACHE_KEY='abs_q_cache_v3';
+const CACHE_TARGET=100;
+
 let ss={questions:[],idx:0,correct:0,total:0,domain:'random',count:10,spacedMode:false,spacedQueue:[],mode:'mixed'};
 let cq=null,answered=false,userDiff=null,userFlagged=false,sessionMode='mixed';
-let activeTab='practice';
-
-const STORAGE_KEY='abs_sesap_app_v1';
-const API_KEY_STORAGE='abs_anthropic_key';
+let generating=false,genCount=0;
 
 function getApiKey(){return localStorage.getItem(API_KEY_STORAGE)||'';}
 function saveApiKey(k){localStorage.setItem(API_KEY_STORAGE,k.trim());}
+function load(){try{const r=localStorage.getItem(STORAGE_KEY);if(r)return JSON.parse(r)}catch(e){}return{history:[],sessions:0}}
+function save(d){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(d))}catch(e){}}
+function loadCache(){try{const r=localStorage.getItem(CACHE_KEY);if(r)return JSON.parse(r)}catch(e){}return[];}
+function saveCache(c){try{localStorage.setItem(CACHE_KEY,JSON.stringify(c))}catch(e){}}
 
-function checkApiKey(){
-  if(!getApiKey()){
-    showApiKeyScreen();
-    return false;
-  }
-  return true;
-}
+function checkApiKey(){if(!getApiKey()){showApiKeyScreen();return false;}return true;}
 
 function showApiKeyScreen(){
   document.getElementById('root').innerHTML=`
   <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;background:var(--bg);font-family:var(--font)">
     <div style="width:100%;max-width:420px">
       <div style="text-align:center;margin-bottom:32px">
-        <div style="font-size:36px;margin-bottom:12px">⚕️</div>
+        <div style="font-size:40px;margin-bottom:12px">+</div>
         <div style="font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px">ABS QBank</div>
-        <div style="font-size:14px;color:var(--muted);line-height:1.5">SESAP-Style Board Review</div>
+        <div style="font-size:14px;color:var(--muted)">SESAP-Style Board Review</div>
       </div>
       <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px">
         <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px">Enter your Anthropic API key</div>
-        <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5">This app uses Claude AI to generate questions. Your key is saved only on your device and never sent anywhere except the Anthropic API.</div>
+        <div style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5">Saved only on this device. Never shared.</div>
         <div style="font-size:12px;color:var(--muted);margin-bottom:6px">API Key</div>
-        <input type="password" id="api-key-input" placeholder="sk-ant-..." style="width:100%;font-size:15px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);margin-bottom:12px;outline:none">
-        <button onclick="submitApiKey()" style="width:100%;padding:14px;border-radius:12px;background:#185FA5;color:#fff;border:none;font-size:16px;font-weight:600;cursor:pointer;font-family:var(--font)">Save & Start</button>
-        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
-          <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:600">How to get your API key:</div>
-          <div style="font-size:12px;color:var(--muted);line-height:1.7">1. Go to <span style="color:#185FA5">console.anthropic.com</span><br>2. Sign in or create a free account<br>3. Click <strong>API Keys</strong> in the left sidebar<br>4. Click <strong>Create Key</strong> → copy it<br>5. Paste it above</div>
+        <input type="password" id="api-key-input" placeholder="sk-ant-api03-..." style="width:100%;font-size:15px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);margin-bottom:12px;outline:none">
+        <button onclick="submitApiKey()" style="width:100%;padding:14px;border-radius:12px;background:#185FA5;color:#fff;border:none;font-size:16px;font-weight:600;cursor:pointer;font-family:var(--font)">Save and Start</button>
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.8">
+          <strong>How to get your key:</strong><br>
+          1. Go to console.anthropic.com<br>
+          2. Click API Keys in the left sidebar<br>
+          3. Click Create Key and copy it immediately<br>
+          4. Paste it above
         </div>
       </div>
-      <div style="text-align:center;margin-top:16px;font-size:11px;color:var(--muted)">Your key is stored locally on this device only</div>
     </div>
   </div>`;
 }
 
 function submitApiKey(){
   const val=document.getElementById('api-key-input').value.trim();
-  if(!val.startsWith('sk-ant-')){
-    document.getElementById('api-key-input').style.borderColor='var(--red)';
-    return;
-  }
-  saveApiKey(val);
-  location.reload();
+  if(!val.startsWith('sk-ant-')){document.getElementById('api-key-input').style.borderColor='var(--red)';return;}
+  saveApiKey(val);location.reload();
 }
 
-function load(){try{const r=window.localStorage.getItem(STORAGE_KEY);if(r)return JSON.parse(r)}catch(e){}return{history:[],sessions:0}}
-function save(d){try{window.localStorage.setItem(STORAGE_KEY,JSON.stringify(d))}catch(e){}}
+function resetApiKey(){if(confirm('Reset your API key?')){localStorage.removeItem(API_KEY_STORAGE);location.reload();}}
 
 function getDue(history){
   const now=Date.now();
   return history.filter(h=>{
     if(h.isControversy)return false;
     const intervals=[1,3,7,14,30];
-    const rev=h.reviewCount||0;
-    const days=h.correct?intervals[Math.min(rev,intervals.length-1)]:1;
+    const days=h.correct?intervals[Math.min(h.reviewCount||0,4)]:1;
     return now>=new Date(h.date).getTime()+days*86400000;
   });
 }
 
 function showTab(t){
-  activeTab=t;
   document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('active',['practice','review','stats'][i]===t));
   document.querySelectorAll('.view-panel').forEach(v=>v.style.display='none');
   document.getElementById('view-'+t).style.display='block';
@@ -325,6 +302,94 @@ function setMode(m,btn){
   sessionMode=m;
   document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+}
+
+function updateCacheUI(){
+  const n=loadCache().length;
+  const pct=Math.min(Math.round(n/CACHE_TARGET*100),100);
+  const el_count=document.getElementById('cache-count');
+  const el_bar=document.getElementById('cache-bar');
+  const el_label=document.getElementById('cache-label');
+  const el_genbtn=document.getElementById('gen-btn');
+  if(el_count)el_count.textContent=n+' / '+CACHE_TARGET+' ready';
+  if(el_bar)el_bar.style.width=pct+'%';
+  if(el_label){
+    if(n>=CACHE_TARGET)el_label.textContent='Question bank full';
+    else if(generating)el_label.textContent='Generating... ('+genCount+' added)';
+    else el_label.textContent=n>0?n+' questions ready — generate more':'Bank empty — generate questions for instant play';
+  }
+  if(el_genbtn)el_genbtn.textContent=n>=CACHE_TARGET?'Regenerate bank':'Generate '+CACHE_TARGET+' questions';
+}
+
+async function generateOneQuestion(domain,isControversy){
+  const sys=`You are a surgical educator writing questions for SESAP (ACS Surgical Education and Self-Assessment Program). Match SESAP exactly: peer-reviewed, evidence-based, written by a practicing surgeon author.
+
+RESPOND ONLY with valid JSON. No markdown, no extra text.
+
+${isControversy?'CONTROVERSY ITEM: No single correct answer. Genuinely debated clinical scenario where expert surgeons disagree.':'STANDARD QUESTION: One definitively correct best answer.'}
+
+{"domain":"${domain}","isControversy":${isControversy},"difficulty":"easy|medium|hard","vitals":{"BP":"","HR":"","RR":"","Temp":"","SpO2":""},"labs":{"Na":"","K":"","Cl":"","BUN":"","Cr":"","WBC":"","Hgb":"","Plt":"","INR":"","Albumin":""},"imaging_or_path":"","stem":"3-5 sentence SESAP vignette. Age, sex, complaint, PMH, exam findings. No vitals or labs in stem.","question":"Best answer question ending with ?","choices":{"A":"","B":"","C":"","D":"","E":""},"correct":"A","critique_intro":"2-3 sentences. Set context, state concept, orient to answer. Formal surgical voice.","critiques":{"A":"3-5 sentence SESAP critique. Reasoning, pathophysiology, evidence, guidelines.","B":"Same.","C":"Same.","D":"Same.","E":"Same."},"references":["Author AA. Title. Journal. Year;Vol:Pages.","Second ref."],"pearl":"Single highest-yield board fact.","controversy_note":"${isControversy?'2-3 sentences on the controversy and competing viewpoints.':''}"}
+
+Requirements: highly plausible distractors, realistic vitals/labs. Module: ${domain}.${domain==='Perioperative Care'?' Focus: SSI, anticoagulation, nutrition, transfusion, complications.':''}${domain==='Legal, Ethics, Quality and Safety'?' Focus: autonomy, consent, end-of-life, disparities.':''}`;
+
+  const resp=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-key':getApiKey(),'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2000,system:sys,messages:[{role:'user',content:'Generate the question now.'}]})
+  });
+  const data=await resp.json();
+  if(data.error)throw new Error(data.error.message);
+  let raw=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
+  raw=raw.replace(/```json|```/g,'').trim();
+  const q=JSON.parse(raw);
+  q.domain=domain;
+  q.cachedAt=new Date().toISOString();
+  return q;
+}
+
+async function startGenerating(){
+  if(generating)return;
+  const cache=loadCache();
+  if(cache.length>=CACHE_TARGET){saveCache([]);}
+  generating=true;genCount=0;
+  document.getElementById('gen-btn').style.display='none';
+  document.getElementById('stop-btn').style.display='block';
+  let i=loadCache().length;
+  while(generating&&loadCache().length<CACHE_TARGET){
+    const domain=MODULES[i%MODULES.length];
+    const isControversy=(i%5===4);
+    try{
+      const q=await generateOneQuestion(domain,isControversy);
+      const c=loadCache();c.push(q);saveCache(c);
+      genCount++;i++;updateCacheUI();
+    }catch(e){await new Promise(r=>setTimeout(r,3000));}
+    await new Promise(r=>setTimeout(r,400));
+  }
+  generating=false;
+  document.getElementById('gen-btn').style.display='block';
+  document.getElementById('stop-btn').style.display='none';
+  updateCacheUI();
+}
+
+function stopGenerating(){
+  generating=false;
+  document.getElementById('gen-btn').style.display='block';
+  document.getElementById('stop-btn').style.display='none';
+  updateCacheUI();
+}
+
+function getNextCachedQuestion(domain,isControversy){
+  const cache=loadCache();
+  if(!cache.length)return null;
+  let idx=-1;
+  for(let i=0;i<cache.length;i++){
+    if((domain==='random'||cache[i].domain===domain)&&cache[i].isControversy===isControversy){idx=i;break;}
+  }
+  if(idx===-1){for(let i=0;i<cache.length;i++){if(domain==='random'||cache[i].domain===domain){idx=i;break;}}}
+  if(idx===-1)idx=0;
+  const q=cache.splice(idx,1)[0];
+  saveCache(cache);updateCacheUI();
+  return q;
 }
 
 function init(){
@@ -339,8 +404,9 @@ function init(){
   document.getElementById('s-due').textContent=due.length;
   const sb=document.getElementById('spaced-btn');
   sb.disabled=due.length===0;
-  sb.textContent=due.length?`Spaced review (${due.length} due)`:'Spaced review';
+  sb.textContent=due.length?'Spaced review ('+due.length+' due)':'Spaced review';
   populateDomainFilter();
+  updateCacheUI();
 }
 
 function startSession(spacedMode){
@@ -355,9 +421,9 @@ function startSession(spacedMode){
 }
 
 function updateBanner(){
-  document.getElementById('q-prog').textContent=`Q${ss.idx+1} of ${ss.count}`;
-  document.getElementById('live-score').textContent=`${ss.correct}/${ss.total}`;
-  document.getElementById('header-score').textContent=ss.total?`${Math.round(ss.correct/ss.total*100)}%`:'';
+  document.getElementById('q-prog').textContent='Q'+(ss.idx+1)+' of '+ss.count;
+  document.getElementById('live-score').textContent=ss.correct+'/'+ss.total;
+  document.getElementById('header-score').textContent=ss.total?Math.round(ss.correct/ss.total*100)+'%':'';
 }
 
 function pickMode(){
@@ -370,95 +436,62 @@ function loadQ(){
   answered=false;cq=null;userDiff=null;userFlagged=false;
   document.getElementById('next-btn').style.display='none';
   const domainFocus=ss.domain==='random'?MODULES[Math.floor(Math.random()*MODULES.length)]:ss.domain;
-  const qMode=pickMode();
-  const isControversy=qMode==='controversy';
+  const isControversy=pickMode()==='controversy';
   document.getElementById('mode-tag').textContent=isControversy?'Controversy item':'';
-  document.getElementById('q-content').innerHTML=`<div class="card"><div class="loading"><div class="dots"><span></span><span></span><span></span></div><p>Generating ${domainFocus}<br>question...</p></div></div>`;
   updateBanner();
-
-  const sys=`You are a surgical educator writing questions for the ACS Surgical Education and Self-Assessment Program (SESAP), the gold standard surgical self-assessment resource. Your questions must exactly match SESAP's voice, depth, and format — written by a practicing surgeon author, peer-reviewed, evidence-based, and academically rigorous.
-
-RESPOND ONLY with valid JSON. No markdown, no preamble, no extra text.
-
-${isControversy?`THIS IS A CONTROVERSY ITEM. There is no single universally correct answer. The question presents a genuinely debated clinical scenario where expert surgeons may reasonably disagree.`:`THIS IS A STANDARD QUESTION with one definitively correct best answer.`}
-
-{
-  "domain": "${domainFocus}",
-  "isControversy": ${isControversy},
-  "difficulty": "easy|medium|hard",
-  "vitals": {"BP":"","HR":"","RR":"","Temp":"","SpO2":""},
-  "labs": {"Na":"","K":"","Cl":"","BUN":"","Cr":"","WBC":"","Hgb":"","Plt":"","INR":"","Albumin":""},
-  "imaging_or_path": "",
-  "stem": "SESAP-style clinical vignette 3-5 sentences. Patient age, sex, presenting complaint, relevant surgical/medical history, physical exam. Do NOT put vitals/labs in stem.",
-  "question": "Single best answer question?",
-  "choices": {"A":"","B":"","C":"","D":"","E":""},
-  "correct": "A",
-  "critique_intro": "2-3 sentence critique introduction. Set clinical context, state key concept, orient to correct answer. Formal academic surgical voice.",
-  "critiques": {
-    "A": "Full 3-5 sentence SESAP critique for this choice. Explain clinical reasoning, pathophysiology, evidence, guidelines. Formal peer-reviewed surgical education voice.",
-    "B": "Same...",
-    "C": "Same...",
-    "D": "Same...",
-    "E": "Same..."
-  },
-  "references": ["Author AA. Title. Journal. Year;Vol:Pages.", "Second reference."],
-  "pearl": "Single highest-yield board fact from this question.",
-  "controversy_note": "${isControversy?'2-3 sentences on why this is controversial and what competing viewpoints exist':''}"
-}
-
-Module: ${domainFocus}. Distractors must be highly plausible. Include realistic vitals and labs. For Perioperative Care focus on SSI, anticoagulation, nutrition, transfusion, complications. For Legal/Ethics include autonomy, consent, end-of-life, disparities.`;
-
-  fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':getApiKey(),'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2000,system:sys,messages:[{role:'user',content:'Generate the question now.'}]})})
-  .then(r=>r.json())
-  .then(data=>{
-    let raw=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
-    raw=raw.replace(/```json|```/g,'').trim();
-    cq=JSON.parse(raw);cq.domain=domainFocus;renderQ(cq);
-  })
-  .catch(()=>{
-    document.getElementById('q-content').innerHTML=`<div class="card"><div class="loading"><p style="color:var(--red)">Error generating question.</p><br><button onclick="loadQ()" style="color:var(--blue);background:none;border:none;cursor:pointer;font-size:15px;font-family:var(--font)">Try again</button></div></div>`;
-  });
+  const cached=getNextCachedQuestion(ss.domain,isControversy);
+  if(cached){
+    cq=cached;renderQ(cq);
+    if(loadCache().length<15&&!generating){
+      generateOneQuestion(MODULES[Math.floor(Math.random()*MODULES.length)],Math.random()<0.2)
+        .then(q=>{const c=loadCache();c.push(q);saveCache(c);updateCacheUI();}).catch(()=>{});
+    }
+    return;
+  }
+  document.getElementById('q-content').innerHTML='<div class="card"><div class="loading"><div class="dots"><span></span><span></span><span></span></div><p>Generating '+domainFocus+'<br>question...</p></div></div>';
+  generateOneQuestion(domainFocus,isControversy)
+    .then(q=>{cq=q;renderQ(cq);})
+    .catch(()=>{document.getElementById('q-content').innerHTML='<div class="card"><div class="loading"><p style="color:var(--red)">Error generating question.</p><br><button onclick="loadQ()" style="color:var(--blue);background:none;border:none;cursor:pointer;font-size:15px">Try again</button></div></div>';});
 }
 
 function buildTables(q){
-  let html='';
-  if(q.vitals){const vk=Object.keys(q.vitals).filter(k=>q.vitals[k]&&q.vitals[k].trim());if(vk.length)html+=`<table class="vtable"><tr>${vk.map(k=>`<td>${k}</td>`).join('')}</tr><tr>${vk.map(k=>`<td>${q.vitals[k]}</td>`).join('')}</tr></table>`;}
-  if(q.labs){const lk=Object.keys(q.labs).filter(k=>q.labs[k]&&q.labs[k].trim());if(lk.length)html+=`<table class="vtable"><tr>${lk.map(k=>`<td>${k}</td>`).join('')}</tr><tr>${lk.map(k=>`<td>${q.labs[k]}</td>`).join('')}</tr></table>`;}
-  if(q.imaging_or_path&&q.imaging_or_path.trim())html+=`<div class="imaging-box"><div class="imaging-label">Imaging / Pathology</div>${q.imaging_or_path}</div>`;
-  return html;
+  let h='';
+  if(q.vitals){const vk=Object.keys(q.vitals).filter(k=>q.vitals[k]&&q.vitals[k].trim());if(vk.length)h+='<table class="vtable"><tr>'+vk.map(k=>'<td>'+k+'</td>').join('')+'</tr><tr>'+vk.map(k=>'<td>'+q.vitals[k]+'</td>').join('')+'</tr></table>';}
+  if(q.labs){const lk=Object.keys(q.labs).filter(k=>q.labs[k]&&q.labs[k].trim());if(lk.length)h+='<table class="vtable"><tr>'+lk.map(k=>'<td>'+k+'</td>').join('')+'</tr><tr>'+lk.map(k=>'<td>'+q.labs[k]+'</td>').join('')+'</tr></table>';}
+  if(q.imaging_or_path&&q.imaging_or_path.trim())h+='<div class="imaging-box"><div class="imaging-label">Imaging / Pathology</div>'+q.imaging_or_path+'</div>';
+  return h;
 }
 
 function renderQ(q){
   const letters=['A','B','C','D','E'];
   const diff=q.difficulty||'medium';
   const dc=diff==='easy'?'bde':diff==='hard'?'bdh':'bdm';
-  document.getElementById('q-content').innerHTML=`
-    <div class="card">
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
-        <span class="badge bd">${q.domain}</span>
-        <span class="badge ${dc}">${diff}</span>
-        ${q.isControversy?'<span class="badge bv">Controversy</span>':''}
-      </div>
-      ${q.isControversy?`<div class="controversy-note"><div class="cv-label">Controversy item</div><div class="cv-text">This question presents a genuinely debated clinical scenario. Select the answer you believe is best supported by current evidence.</div></div>`:''}
-      ${buildTables(q)}
-      <div class="stem">${q.stem}</div>
-      <div class="qtext">${q.question}</div>
-      <div id="choices-wrap">${letters.map(l=>`<button class="cbtn" id="cb-${l}" onclick="selectAnswer('${l}')"><span class="cltr">${l}.</span><span>${q.choices[l]||''}</span></button>`).join('')}</div>
-      <div id="answer-block" style="display:none"></div>
-      <div id="rate-row" style="display:none" class="rate-row">
-        <span class="rate-label">Difficulty:</span>
-        <button class="rbtn" onclick="rateDiff('easy',this)">Easy</button>
-        <button class="rbtn" onclick="rateDiff('medium',this)">Med</button>
-        <button class="rbtn" onclick="rateDiff('hard',this)">Hard</button>
-        <button class="bmark-btn" id="bmark-btn" onclick="toggleFlag(this)">Bookmark</button>
-      </div>
-    </div>`;
+  document.getElementById('q-content').innerHTML=
+    '<div class="card">'+
+    '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">'+
+    '<span class="badge bd">'+q.domain+'</span>'+
+    '<span class="badge '+dc+'">'+diff+'</span>'+
+    (q.isControversy?'<span class="badge bv">Controversy</span>':'')+
+    '</div>'+
+    (q.isControversy?'<div class="controversy-note"><div class="cv-label">Controversy item</div><div class="cv-text">This question presents a genuinely debated clinical scenario. Select the answer best supported by current evidence.</div></div>':'')+
+    buildTables(q)+
+    '<div class="stem">'+q.stem+'</div>'+
+    '<div class="qtext">'+q.question+'</div>'+
+    '<div id="choices-wrap">'+letters.map(l=>'<button class="cbtn" id="cb-'+l+'" onclick="selectAnswer(\''+l+'\')"><span class="cltr">'+l+'.</span><span>'+( q.choices[l]||'')+'</span></button>').join('')+'</div>'+
+    '<div id="answer-block" style="display:none"></div>'+
+    '<div id="rate-row" style="display:none" class="rate-row">'+
+    '<span class="rate-label">Difficulty:</span>'+
+    '<button class="rbtn" onclick="rateDiff(\'easy\',this)">Easy</button>'+
+    '<button class="rbtn" onclick="rateDiff(\'medium\',this)">Med</button>'+
+    '<button class="rbtn" onclick="rateDiff(\'hard\',this)">Hard</button>'+
+    '<button class="bmark-btn" id="bmark-btn" onclick="toggleFlag(this)">Bookmark</button>'+
+    '</div></div>';
 }
 
 function selectAnswer(letter){
   if(answered||!cq)return;
   answered=true;
-  const q=cq;const correct=q.correct;
+  const q=cq,correct=q.correct;
   const isCorrect=letter===correct||q.isControversy;
   if(!q.isControversy){ss.total++;if(isCorrect)ss.correct++;}
   ['A','B','C','D','E'].forEach(l=>{
@@ -470,29 +503,20 @@ function selectAnswer(letter){
   const critiqueHtml=letters.map(l=>{
     const ct=(q.critiques&&q.critiques[l])||'';
     const isC=l===correct,isUW=l===letter&&!isCorrect&&!q.isControversy;
-    return `<div class="critique-item">
-      <div class="citem-header">
-        <span class="citem-letter">${l}.</span>
-        <span class="citem-choice">${q.choices[l]||''}</span>
-        ${isC?'<span class="badge bc">Correct</span>':isUW?'<span class="badge bi">Your answer</span>':''}
-      </div>
-      <div class="citem-text">${ct}</div>
-    </div>`;
+    return '<div class="critique-item"><div class="citem-header"><span class="citem-letter">'+l+'.</span><span class="citem-choice">'+(q.choices[l]||'')+'</span>'+(isC?'<span class="badge bc">Correct</span>':isUW?'<span class="badge bi">Your answer</span>':'')+'</div><div class="citem-text">'+ct+'</div></div>';
   }).join('');
-  const refsHtml=q.references&&q.references.length?`<div class="refs"><div class="ref-title">References</div>${q.references.map(r=>`<div class="ref-item">${r}</div>`).join('')}</div>`:'';
+  const refsHtml=q.references&&q.references.length?'<div class="refs"><div class="ref-title">References</div>'+q.references.map(r=>'<div class="ref-item">'+r+'</div>').join('')+'</div>':'';
   document.getElementById('answer-block').style.display='block';
-  document.getElementById('answer-block').innerHTML=`
-    <div class="critique-wrap">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-        ${q.isControversy?'<span class="badge bv">Controversy item</span>':`<span class="badge ${isCorrect?'bc':'bi'}">${isCorrect?'Correct':'Incorrect'} — Answer: ${correct}</span>`}
-        <span style="font-size:13px;font-weight:600;color:var(--text)">Critique</span>
-      </div>
-      ${q.isControversy&&q.controversy_note?`<div class="controversy-note" style="margin-bottom:12px"><div class="cv-label">Controversy note</div><div class="cv-text">${q.controversy_note}</div></div>`:''}
-      ${q.critique_intro?`<div class="critique-intro">${q.critique_intro}</div>`:''}
-      ${critiqueHtml}
-      <div class="pearl"><div class="pearl-label">High-yield pearl</div><div class="pearl-text">${q.pearl||''}</div></div>
-      ${refsHtml}
-    </div>`;
+  document.getElementById('answer-block').innerHTML=
+    '<div class="critique-wrap">'+
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">'+
+    (q.isControversy?'<span class="badge bv">Controversy item</span>':'<span class="badge '+(isCorrect?'bc':'bi')+'">'+(isCorrect?'Correct':'Incorrect')+' — Answer: '+correct+'</span>')+
+    '<span style="font-size:13px;font-weight:600;color:var(--text)">Critique</span></div>'+
+    (q.isControversy&&q.controversy_note?'<div class="controversy-note" style="margin-bottom:12px"><div class="cv-label">Controversy note</div><div class="cv-text">'+q.controversy_note+'</div></div>':'')+
+    (q.critique_intro?'<div class="critique-intro">'+q.critique_intro+'</div>':'')+
+    critiqueHtml+
+    '<div class="pearl"><div class="pearl-label">High-yield pearl</div><div class="pearl-text">'+(q.pearl||'')+'</div></div>'+
+    refsHtml+'</div>';
   document.getElementById('rate-row').style.display='flex';
   updateBanner();
   const d=load();
@@ -500,14 +524,14 @@ function selectAnswer(letter){
   save(d);
   ss.questions.push({domain:q.domain,correct:isCorrect,isControversy:q.isControversy||false});
   const done=q.isControversy?ss.idx+1>=ss.count:ss.total>=ss.count;
-  if(done){setTimeout(()=>showSummary(),400);}
-  else{document.getElementById('next-btn').style.display='block';}
+  if(done)setTimeout(()=>showSummary(),400);
+  else document.getElementById('next-btn').style.display='block';
 }
 
 function rateDiff(diff,btn){
   userDiff=diff;
   document.querySelectorAll('.rate-row .rbtn').forEach(b=>b.className='rbtn');
-  btn.className=`rbtn ${diff==='easy'?'re':diff==='hard'?'rh':'rm'}`;
+  btn.className='rbtn '+(diff==='easy'?'re':diff==='hard'?'rh':'rm');
   const d=load();if(d.history.length>0){d.history[d.history.length-1].difficulty=diff;save(d);}
 }
 
@@ -527,19 +551,19 @@ function showSummary(){
   const pct=standard.length?Math.round(ss.correct/standard.length*100):0;
   const byDomain={};
   standard.forEach(q=>{if(!byDomain[q.domain])byDomain[q.domain]={c:0,t:0};byDomain[q.domain].t++;if(q.correct)byDomain[q.domain].c++;});
-  const weak=Object.entries(byDomain).filter(([,v])=>v.t>0&&Math.round(v.c/v.t*100)<60).map(([k,v])=>`<li style="font-size:14px;margin-bottom:6px;color:var(--text)">${k} — ${Math.round(v.c/v.t*100)}%</li>`).join('');
+  const weak=Object.entries(byDomain).filter(([,v])=>v.t>0&&Math.round(v.c/v.t*100)<60).map(([k,v])=>'<li style="font-size:14px;margin-bottom:6px;color:var(--text)">'+k+' — '+Math.round(v.c/v.t*100)+'%</li>').join('');
   const cvCount=ss.questions.filter(q=>q.isControversy).length;
   const d=load();d.sessions=(d.sessions||0)+1;save(d);
   document.getElementById('pane-summary').style.display='block';
-  document.getElementById('pane-summary').innerHTML=`
-    <div class="card" style="text-align:center">
-      <div class="summary-score">${ss.correct}/${standard.length}</div>
-      <div class="summary-pct">${pct}% correct</div>
-      ${cvCount?`<div style="font-size:13px;color:var(--muted);margin-bottom:12px">${cvCount} controversy item${cvCount>1?'s':''}</div>`:''}
-      ${weak?`<div style="text-align:left"><div class="sec-title">Review these modules</div><ul style="padding-left:18px">${weak}</ul></div>`:`<div style="font-size:14px;color:var(--green)">All modules above 60%</div>`}
-    </div>
-    <button class="btn btn-primary" onclick="resetSetup()">New session</button>
-    <button class="btn btn-secondary" onclick="showTab('review')">Review answers</button>`;
+  document.getElementById('pane-summary').innerHTML=
+    '<div class="card" style="text-align:center">'+
+    '<div class="summary-score">'+ss.correct+'/'+standard.length+'</div>'+
+    '<div class="summary-pct">'+pct+'% correct</div>'+
+    (cvCount?'<div style="font-size:13px;color:var(--muted);margin-bottom:12px">'+cvCount+' controversy item'+(cvCount>1?'s':'')+'</div>':'')+
+    (weak?'<div style="text-align:left"><div class="sec-title">Review these modules</div><ul style="padding-left:18px">'+weak+'</ul></div>':'<div style="font-size:14px;color:var(--green)">All modules above 60%</div>')+
+    '</div>'+
+    '<button class="btn btn-primary" onclick="resetSetup()">New session</button>'+
+    '<button class="btn btn-secondary" onclick="showTab(\'review\')">Review answers</button>';
   document.getElementById('header-score').textContent='';
   init();
 }
@@ -565,40 +589,37 @@ function renderReview(){
   else if(rf==='controversy')h=h.filter(x=>x.isControversy);
   if(df!=='all')h=h.filter(x=>x.domain===df);
   const el=document.getElementById('review-list');
-  if(!h.length){el.innerHTML=`<div class="empty">No questions match these filters.</div>`;return;}
+  if(!h.length){el.innerHTML='<div class="empty">No questions match these filters.</div>';return;}
   el.innerHTML=h.slice(0,25).map(item=>{
     const letters=Object.keys(item.choices||{});
     const diff=item.difficulty||'medium';const dc=diff==='easy'?'bde':diff==='hard'?'bdh':'bdm';
-    let vtHtml='';
-    if(item.vitals){const vk=Object.keys(item.vitals).filter(k=>item.vitals[k]&&item.vitals[k].trim());if(vk.length)vtHtml+=`<table class="vtable"><tr>${vk.map(k=>`<td>${k}</td>`).join('')}</tr><tr>${vk.map(k=>`<td>${item.vitals[k]}</td>`).join('')}</tr></table>`;}
-    if(item.labs){const lk=Object.keys(item.labs).filter(k=>item.labs[k]&&item.labs[k].trim());if(lk.length)vtHtml+=`<table class="vtable"><tr>${lk.map(k=>`<td>${k}</td>`).join('')}</tr><tr>${lk.map(k=>`<td>${item.labs[k]}</td>`).join('')}</tr></table>`;}
-    if(item.imaging_or_path&&item.imaging_or_path.trim())vtHtml+=`<div class="imaging-box"><div class="imaging-label">Imaging / Pathology</div>${item.imaging_or_path}</div>`;
-    const critiqueHtml=letters.map(l=>{
+    let vt='';
+    if(item.vitals){const vk=Object.keys(item.vitals).filter(k=>item.vitals[k]&&item.vitals[k].trim());if(vk.length)vt+='<table class="vtable"><tr>'+vk.map(k=>'<td>'+k+'</td>').join('')+'</tr><tr>'+vk.map(k=>'<td>'+item.vitals[k]+'</td>').join('')+'</tr></table>';}
+    if(item.labs){const lk=Object.keys(item.labs).filter(k=>item.labs[k]&&item.labs[k].trim());if(lk.length)vt+='<table class="vtable"><tr>'+lk.map(k=>'<td>'+k+'</td>').join('')+'</tr><tr>'+lk.map(k=>'<td>'+item.labs[k]+'</td>').join('')+'</tr></table>';}
+    if(item.imaging_or_path&&item.imaging_or_path.trim())vt+='<div class="imaging-box"><div class="imaging-label">Imaging / Pathology</div>'+item.imaging_or_path+'</div>';
+    const ci=letters.map(l=>{
       const ct=(item.critiques&&item.critiques[l])||'';
       const isC=l===item.correctAnswer,isUW=l===item.userAnswer&&!item.correct&&!item.isControversy;
-      return `<div class="critique-item"><div class="citem-header"><span class="citem-letter">${l}.</span><span class="citem-choice">${(item.choices||{})[l]||''}</span>${isC?'<span class="badge bc">Correct</span>':isUW?'<span class="badge bi">Your answer</span>':''}</div><div class="citem-text">${ct}</div></div>`;
+      return '<div class="critique-item"><div class="citem-header"><span class="citem-letter">'+l+'.</span><span class="citem-choice">'+((item.choices||{})[l]||'')+'</span>'+(isC?'<span class="badge bc">Correct</span>':isUW?'<span class="badge bi">Your answer</span>':'')+'</div><div class="citem-text">'+ct+'</div></div>';
     }).join('');
-    const refsHtml=item.references&&item.references.length?`<div class="refs"><div class="ref-title">References</div>${item.references.map(r=>`<div class="ref-item">${r}</div>`).join('')}</div>`:'';
-    return `<div class="card">
-      <div class="review-meta">
-        ${!item.isControversy?`<span class="badge ${item.correct?'bc':'bi'}">${item.correct?'Correct':'Incorrect'}</span>`:''}
-        <span class="badge bd" style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${item.domain}</span>
-        <span class="badge ${dc}">${diff}</span>
-        ${item.isControversy?'<span class="badge bv">Controversy</span>':''}
-        ${item.flagged?'<span class="badge bf">Bookmarked</span>':''}
-        <span class="review-date">${new Date(item.date).toLocaleDateString()}</span>
-      </div>
-      ${vtHtml}
-      <div class="stem" style="margin-bottom:8px">${item.stem||''}</div>
-      <div class="qtext" style="font-size:15px;margin-bottom:12px">${item.question||''}</div>
-      <div class="critique-wrap" style="margin-top:0;padding-top:0;border-top:none">
-        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:10px">Critique</div>
-        ${item.critique_intro?`<div class="critique-intro">${item.critique_intro}</div>`:''}
-        ${critiqueHtml}
-        <div class="pearl"><div class="pearl-label">High-yield pearl</div><div class="pearl-text">${item.pearl||''}</div></div>
-        ${refsHtml}
-      </div>
-    </div>`;
+    const ri=item.references&&item.references.length?'<div class="refs"><div class="ref-title">References</div>'+item.references.map(r=>'<div class="ref-item">'+r+'</div>').join('')+'</div>':'';
+    return '<div class="card">'+
+      '<div class="review-meta">'+
+      (!item.isControversy?'<span class="badge '+(item.correct?'bc':'bi')+'">'+(item.correct?'Correct':'Incorrect')+'</span>':'')+
+      '<span class="badge bd" style="max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+item.domain+'</span>'+
+      '<span class="badge '+dc+'">'+diff+'</span>'+
+      (item.isControversy?'<span class="badge bv">Controversy</span>':'')+
+      (item.flagged?'<span class="badge bf">Bookmarked</span>':'')+
+      '<span class="review-date">'+new Date(item.date).toLocaleDateString()+'</span></div>'+
+      vt+
+      '<div class="stem" style="margin-bottom:8px">'+(item.stem||'')+'</div>'+
+      '<div class="qtext" style="font-size:15px;margin-bottom:12px">'+(item.question||'')+'</div>'+
+      '<div class="critique-wrap" style="margin-top:0;padding-top:0;border-top:none">'+
+      '<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:10px">Critique</div>'+
+      (item.critique_intro?'<div class="critique-intro">'+item.critique_intro+'</div>':'')+
+      ci+
+      '<div class="pearl"><div class="pearl-label">High-yield pearl</div><div class="pearl-text">'+(item.pearl||'')+'</div></div>'+
+      ri+'</div></div>';
   }).join('');
 }
 
@@ -612,15 +633,15 @@ function renderStats(){
   document.getElementById('st-flagged').textContent=h.filter(x=>x.flagged).length;
   const ez=standard.filter(x=>(x.difficulty||'medium')==='easy'),med=standard.filter(x=>(x.difficulty||'medium')==='medium'),hrd=standard.filter(x=>x.difficulty==='hard');
   const ps=arr=>arr.length?Math.round(arr.filter(x=>x.correct).length/arr.length*100)+'%':'—';
-  document.getElementById('st-easy').textContent=ps(ez)+(ez.length?`\n(${ez.length})`:'');
-  document.getElementById('st-med').textContent=ps(med)+(med.length?`\n(${med.length})`:'');
-  document.getElementById('st-hard').textContent=ps(hrd)+(hrd.length?`\n(${hrd.length})`:'');
+  document.getElementById('st-easy').textContent=ps(ez)+(ez.length?' ('+ez.length+')':'');
+  document.getElementById('st-med').textContent=ps(med)+(med.length?' ('+med.length+')':'');
+  document.getElementById('st-hard').textContent=ps(hrd)+(hrd.length?' ('+hrd.length+')':'');
   const byDomain={};MODULES.forEach(m=>{byDomain[m]={c:0,t:0}});
   standard.forEach(q=>{if(byDomain[q.domain]){byDomain[q.domain].t++;if(q.correct)byDomain[q.domain].c++;}});
   document.getElementById('domain-breakdown').innerHTML=MODULES.map(m=>{
     const{c,t}=byDomain[m];const pct=t?Math.round(c/t*100):0;
     const bc=t===0?'var(--border)':pct>=70?'var(--green)':pct>=50?'var(--blue)':'var(--red)';
-    return `<div class="drow"><span class="dname">${m}</span><div class="bwrap"><div class="bar" style="width:${t?pct:0}%;background:${bc}"></div></div><span class="dstat">${t?pct+'%('+t+')':'—'}</span></div>`;
+    return '<div class="drow"><span class="dname">'+m+'</span><div class="bwrap"><div class="bar" style="width:'+(t?pct:0)+'%;background:'+bc+'"></div></div><span class="dstat">'+(t?pct+'% ('+t+')':'—')+'</span></div>';
   }).join('');
 }
 
@@ -630,12 +651,6 @@ function populateDomainFilter(){
   MODULES.forEach(m=>{if(!ex.includes(m)){const o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o);}});
 }
 
-function resetApiKey(){
-  if(confirm('Reset your API key?')){
-    localStorage.removeItem('abs_anthropic_key');
-    location.reload();
-  }
-}
 init();
 </script>
 </body>
